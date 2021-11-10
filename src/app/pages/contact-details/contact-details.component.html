@@ -1,0 +1,28 @@
+<button class="button rounded border text-white p-4 m-2 bg-blue-600" (click)="seeContactsList()">
+    {{contactDetailsEnum.ReturnToList}}
+</button>
+<div class="w-full font-bold text-lg text-center my-10">
+    {{contactDetailsEnum.Title}}
+</div>
+<div class="box">
+    <div class="grid grid-cols-12">
+        <div *ngIf="contactDetails" class="md:col-start-3 md:col-span-8 col-span-12 col-start-1 grid grid-cols-12">
+            <div class="h-40 bg-gray-100 flex items-center justify-center col-start-3 col-span-8">
+                <img style="height: 150px;"
+                    src="https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png"
+                    alt="" srcset="">
+            </div>
+            <div class="col-start-3 col-span-8 flex items-center justify-beetwen"><strong>Name: </strong> {{contactDetails.salutation}}
+                {{contactDetails.firstName}}
+                {{contactDetails.lastName}}
+            </div>
+            <div class="col-start-3 col-span-8 flex items-center justify-beetwen"><strong>Address: </strong> {{contactDetails.addressLine1}} /
+                {{contactDetails.addressLine2}}</div>
+            <div class="col-start-3 col-span-8 flex items-center justify-beetwen"><strong>City: </strong> {{contactDetails.city}} /
+                {{contactDetails.state}}</div>
+            <div class="col-start-3 col-span-8 flex items-center justify-beetwen"><strong>Zip Code: </strong> {{contactDetails.zipCode}}</div>
+            <div class="col-start-3 col-span-8 flex items-center justify-beetwen"><strong>Email / PhoneNumber: </strong> {{contactDetails.emailAddress}} /
+                {{contactDetails.telePhoneNumber}}</div>
+        </div>
+    </div>
+</div>

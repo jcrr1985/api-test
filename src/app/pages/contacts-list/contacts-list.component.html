@@ -1,0 +1,23 @@
+<div class="box">
+    <div class="font-bold text-xl p-5 w-full text-center">
+        <h1>Contact List</h1>
+    </div>
+    <div class="grid grid-cols-8 w-4/3 mx-5">
+        <ng-container *ngFor="let x of contacts;let i = index">
+            <div class=" md:col-span-2 col-span-12 shadow-lg p-2 zoom-in contact_container"
+                (click)="seeContactDetail(i)">
+                <div class="h-40 bg-gray-100 flex items-center justify-center">
+                    <img style="height: 150px;"
+                        src="https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png"
+                        alt="" srcset="">
+                </div>
+                <div class="flex items-center justify-center p-5">
+                    {{x.salutation}}
+                    {{x.firstName}}
+                    {{x.lastName}}
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>
