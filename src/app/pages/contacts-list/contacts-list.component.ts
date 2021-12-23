@@ -10,7 +10,7 @@ import { ContactService } from 'src/app/shareds/services/contact.service';
 })
 export class ContactsListComponent implements OnInit {
 
-  contacts: Contacts[] = [];
+  public contacts!: Contacts[];
 
   constructor(private service: ContactService, private router: Router) { }
 
@@ -21,9 +21,9 @@ export class ContactsListComponent implements OnInit {
   /**
    * @description get Contacts List from API
    */
-  async getContactsList() {
+   getContactsList(): void {
     try {
-      this.contacts = await this.service.getContacts();
+      this.service.getContacts().subscribe(contacts => this.contacts = contacts);
     } catch (error) {
       console.log(error);
     }
@@ -32,8 +32,8 @@ export class ContactsListComponent implements OnInit {
   /**
    * @description see contact details 
    * */
-  seeContactDetail(index: any) {
-    this.router.navigate(['/contactsDetails', index])
+  displayContactDetails(index: number) {
+    this.router.navigate(['/contactsDetails', index]);
   }
 
 }

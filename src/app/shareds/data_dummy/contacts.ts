@@ -23,4 +23,4 @@ export const contacts = [
         "emailAddress": "julio.rodriguez@gmail.com",
         "telePhoneNumber": "+56950953048"
     }
-]
+];
